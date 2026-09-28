@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "electron-app",
-  "version": "2.3.11",
+  "version": "2.3.12-ES",
   "license": "AGPL-3.0-or-later",
   "main": "./src-gen/backend/electron-main.js",
   "dependencies": {
@@ -19,7 +19,7 @@
     "@theia/preferences": "1.57.0",
     "@theia/terminal": "1.57.0",
     "@theia/workspace": "1.57.0",
-    "arduino-ide-extension": "2.3.11"
+    "arduino-ide-extension": "2.3.12-ES"
   },
   "devDependencies": {
     "@theia/cli": "1.57.0",
@@ -28,7 +28,7 @@
     "compression-webpack-plugin": "^9.0.0",
     "copy-webpack-plugin": "^8.1.1",
     "dateformat": "^5.0.3",
-    "electron": "35.7.5",
+    "electron": "42.11.8",
     "electron-builder": "^24.6.4",
     "electron-notarize": "^1.1.1",
     "execa": "^7.1.1",
@@ -39,11 +39,13 @@
     "rimraf": "^5.0.0",
     "semver": "^7.3.2",
     "temp": "^0.9.1",
+    "terser-webpack-plugin": "^5.3.11",
     "yaml": "^1.10.2"
   },
   "scripts": {
+    "postinstall": "install-electron",
     "prepare": "theia download:plugins",
-    "prebuild": "rimraf lib",
+    "prebuild": "install-electron && rimraf lib",
     "build": "theia build",
     "prebuild:dev": "yarn prebuild",
     "build:dev": "theia build --config webpack.dev.js --mode development",
