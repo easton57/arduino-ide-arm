@@ -25,8 +25,8 @@ concurrency:
 env:
   # See vars.GO_VERSION field of https://github.com/arduino/arduino-cli/blob/master/DistTasks.yml
   GO_VERSION: '1.26'
+  NODE_VERSION: '24.21.0'
   # See: https://github.com/actions/setup-node/#readme
-  NODE_VERSION: '22'
   YARN_VERSION: '1.22'
   # Skip downloading the Chromium binary used by Puppeteer (not needed for the build).
   PUPPETEER_SKIP_DOWNLOAD: 'true'
